@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <iostream>
+#include <string>
 #include "iter.hpp"
 
 // Simple function to print element
@@ -31,10 +32,10 @@ int main() {
     size_t len = sizeof(arr) / sizeof(int);
 
     std::cout << "Original: ";
-    ::iter(arr, len, print<int>);
+    ::iter(arr, len, print);
     std::cout << std::endl;
 
-    ::iter(arr, len, increment<int>);
+    ::iter(arr, len, increment);
 
     std::cout << "Modified: ";
     ::iter(arr, len, print<int>);
@@ -45,7 +46,7 @@ int main() {
     size_t const_len = sizeof(const_arr) / sizeof(int);
 
     std::cout << "Values: ";
-    ::iter(const_arr, const_len, print<const int>); // passing print<const int>
+    ::iter(const_arr, const_len, print);
     std::cout << std::endl << std::endl;
 
     std::cout << "Test 3: String array" << std::endl;
@@ -53,7 +54,7 @@ int main() {
     size_t str_len = 3;
 
     std::cout << "Strings: ";
-    ::iter(str_arr, str_len, print<std::string>);
+    ::iter(str_arr, str_len, print);
     std::cout << std::endl;
 
     return 0;
